@@ -1,5 +1,14 @@
 # Escuela Colombiana de Ingeniería Julio Garavito - Arquitecturas de Software ARSW - Parcial Segundo Tercio
 
+
+## Para correr
+Se debe tener maven y java 8 y estar en el directoro Chinchilla-Parcial-T2/WordWeather ejecute los siguientes comandos
+mvn clean package
+mvn spring-boot:run
+
+y ingresar a http://localhost:8080/
+
+
 ## Preparación para el Parcial
 
 Con el objetivo de preparar el examen final del segundo tercio, por favor siga las siguientes instrucciones.
