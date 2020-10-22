@@ -10,12 +10,48 @@
     <style type="text/css">
         #map {
             height: 400px;
-            width: 100%;
+            width: 50%;
             background-color: grey;
         }
     </style>
 </head>
 <body>
-    <div id="map"></div>
+    
+    <div class="row">
+        <input class="" placeholder="City name" id="city"/>
+        <button class="btn btn-outline-primary"  onclick="app.getCityWeather(city.value)"> Find </button></div>
+        <div id="data">
+            <table  id="CountriesTable" class="table table-bordered text-center" style="visibility: hidden;">
+            <thead class="thead-dark">
+                <tr>
+                    <th>City</th>
+                    <th>Temperature</th>
+                    <th>Temperature Min</th>
+                    <th>Temperature Max</th>
+                    <th>Pressure</th>
+                    <th>Humidity</th>
+                    <th>Rain Prob</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="CountriesTableBody"></tbody>
+        </table>
+        </div>
+    <div class="row" id="map"></div>
+    
+
+
+
+
+
+    <script src="js/app.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?signed_in=true&language=en" type="text/javascript"></script>
+
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+        
 </body>
 </html>

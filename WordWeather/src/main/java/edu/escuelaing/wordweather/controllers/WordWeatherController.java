@@ -10,6 +10,8 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -29,11 +31,15 @@ public class WordWeatherController {
     @Autowired
     private OpenWeatherService serviceWeather;
     
-    @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<?> getAllData(@RequestBody String city){
-        System.out.println("Looking......");
-        JSONObject json = new JSONObject(city);
-        System.out.println("Finished looking");
-        return new ResponseEntity<>(serviceWeather.getCityWeather(json.getString("city")) ,HttpStatus.ACCEPTED);
+    @GetMapping("/{city}")
+    public ResponseEntity<?> getAllData(@PathVariable String city){
+        try{
+            System.out.println("Looking......");
+            System.out.println(city);
+            System.out.println("Finished looking");
+            return new ResponseEntity<>(serviceWeather.getCityWeather(city) ,HttpStatus.ACCEPTED);
+        }catch(Exception e){
+            return new ResponseEntity<>("Looks like something broke again", HttpStatus.BAD_REQUEST);
+        }
     }
 }
