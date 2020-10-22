@@ -3,10 +3,10 @@
 
 ## Para correr
 Se debe tener maven y java 8 y estar en el directoro Chinchilla-Parcial-T2/WordWeather ejecute los siguientes comandos
-mvn clean package
-mvn spring-boot:run
 
-y ingresar a http://localhost:8080/
+ * mvn clean package
+ * mvn spring-boot:run
+ * ingresar a http://localhost:8080/
 
 
 ## Preparación para el Parcial
